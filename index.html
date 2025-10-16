@@ -6,13 +6,11 @@
     <title>Business Names Vote</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Tajawal', sans-serif;
             background: #050505;
@@ -24,7 +22,6 @@
             position: relative;
             overflow-x: hidden;
         }
-
         .background-gradient {
             position: fixed;
             top: 0;
@@ -36,7 +33,6 @@
                         radial-gradient(circle at 40% 20%, rgba(72, 219, 251, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
-
         .grid-overlay {
             position: fixed;
             top: 0;
@@ -50,20 +46,17 @@
             pointer-events: none;
             animation: gridMove 20s linear infinite;
         }
-
         .container {
             max-width: 1400px;
             width: 100%;
             position: relative;
             z-index: 10;
         }
-
         .header-section {
             text-align: center;
             margin-bottom: 80px;
             animation: fadeInDown 1s ease;
         }
-
         .main-title {
             font-size: 4em;
             font-weight: 900;
@@ -76,7 +69,6 @@
             position: relative;
             display: inline-block;
         }
-
         .main-title::after {
             content: '';
             position: absolute;
@@ -88,14 +80,12 @@
             background: linear-gradient(90deg, transparent, #ff4b91, transparent);
             border-radius: 2px;
         }
-
         .subtitle {
             font-size: 1.2em;
             color: rgba(255, 255, 255, 0.5);
             font-weight: 300;
             margin-bottom: 30px;
         }
-
         .stats-container {
             display: flex;
             justify-content: center;
@@ -103,7 +93,6 @@
             flex-wrap: wrap;
             margin-top: 40px;
         }
-
         .stat-box {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -114,7 +103,6 @@
             overflow: hidden;
             transition: all 0.4s ease;
         }
-
         .stat-box::before {
             content: '';
             position: absolute;
@@ -125,17 +113,14 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.6s;
         }
-
         .stat-box:hover::before {
             left: 100%;
         }
-
         .stat-box:hover {
             transform: translateY(-5px);
             border-color: rgba(255, 75, 145, 0.5);
             box-shadow: 0 20px 60px rgba(255, 75, 145, 0.2);
         }
-
         .stat-label {
             font-size: 0.9em;
             color: rgba(255, 255, 255, 0.5);
@@ -143,7 +128,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-
         .stat-value {
             font-size: 2.5em;
             font-weight: 800;
@@ -152,7 +136,6 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .winners-showcase {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -160,7 +143,6 @@
             margin-bottom: 80px;
             animation: fadeIn 1.2s ease;
         }
-
         .winner-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(30px);
@@ -173,7 +155,6 @@
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
         }
-
         .winner-card::before {
             content: '';
             position: absolute;
@@ -186,11 +167,9 @@
             opacity: 0;
             transition: opacity 0.4s;
         }
-
         .winner-card:hover::before {
             opacity: 1;
         }
-
         .winner-card::after {
             content: '';
             position: absolute;
@@ -199,35 +178,28 @@
             border-radius: 28px;
             z-index: 1;
         }
-
         .winner-content {
             position: relative;
             z-index: 2;
         }
-
         .winner-card:nth-child(1) {
             transform: scale(1.1);
             margin-top: -20px;
         }
-
         .winner-card:nth-child(1) .rank-number {
             background: linear-gradient(135deg, #ffd700, #ffed4e);
         }
-
         .winner-card:nth-child(2) .rank-number {
             background: linear-gradient(135deg, #c0c0c0, #e8e8e8);
         }
-
         .winner-card:nth-child(3) .rank-number {
             background: linear-gradient(135deg, #cd7f32, #e8a87c);
         }
-
         .winner-card:hover {
             transform: translateY(-15px) scale(1.02);
             border-color: rgba(255, 75, 145, 0.4);
             box-shadow: 0 30px 80px rgba(255, 75, 145, 0.3);
         }
-
         .rank-number {
             width: 80px;
             height: 80px;
@@ -243,7 +215,6 @@
             position: relative;
             animation: float 3s ease-in-out infinite;
         }
-
         .rank-number::before {
             content: '';
             position: absolute;
@@ -254,7 +225,6 @@
             opacity: 0.5;
             z-index: -1;
         }
-
         .winner-name {
             font-size: 1.8em;
             font-weight: 800;
@@ -262,7 +232,6 @@
             margin-bottom: 20px;
             text-shadow: 0 2px 20px rgba(255, 255, 255, 0.3);
         }
-
         .winner-votes {
             display: inline-block;
             background: rgba(255, 75, 145, 0.15);
@@ -274,16 +243,13 @@
             font-size: 1.3em;
             transition: all 0.3s ease;
         }
-
         .winner-card:hover .winner-votes {
             background: rgba(255, 75, 145, 0.25);
             transform: scale(1.1);
         }
-
         .all-entries-section {
             animation: fadeIn 1.4s ease;
         }
-
         .section-header {
             display: flex;
             align-items: center;
@@ -291,14 +257,12 @@
             margin-bottom: 40px;
             padding: 0 10px;
         }
-
         .section-title {
             font-size: 2.5em;
             font-weight: 800;
             color: #ffffff;
             position: relative;
         }
-
         .section-title::before {
             content: '';
             position: absolute;
@@ -309,12 +273,10 @@
             background: linear-gradient(90deg, #ff4b91, transparent);
             border-radius: 2px;
         }
-
         .filter-tabs {
             display: flex;
             gap: 10px;
         }
-
         .filter-tab {
             padding: 10px 20px;
             background: rgba(255, 255, 255, 0.05);
@@ -326,18 +288,15 @@
             font-size: 0.9em;
             font-weight: 600;
         }
-
         .filter-tab:hover {
             background: rgba(255, 255, 255, 0.1);
             color: #ffffff;
         }
-
         .entries-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
-
         .entry-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(20px);
@@ -352,7 +311,6 @@
             overflow: hidden;
             cursor: pointer;
         }
-
         .entry-card::before {
             content: '';
             position: absolute;
@@ -364,25 +322,21 @@
             transform: scaleY(0);
             transition: transform 0.4s ease;
         }
-
         .entry-card:hover::before {
             transform: scaleY(1);
         }
-
         .entry-card:hover {
             transform: translateX(-10px);
             border-color: rgba(72, 219, 251, 0.3);
             background: rgba(255, 255, 255, 0.04);
             box-shadow: 0 20px 60px rgba(72, 219, 251, 0.15);
         }
-
         .entry-left {
             display: flex;
             align-items: center;
             gap: 25px;
             flex: 1;
         }
-
         .entry-rank {
             width: 60px;
             height: 60px;
@@ -398,21 +352,18 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
         .entry-card:hover .entry-rank {
             transform: rotate(360deg) scale(1.1);
             border-color: rgba(72, 219, 251, 0.5);
             background: linear-gradient(135deg, rgba(72, 219, 251, 0.2), rgba(72, 219, 251, 0.05));
             color: #48dbfb;
         }
-
         .entry-name {
             font-size: 1.4em;
             font-weight: 700;
             color: #ffffff;
             transition: all 0.3s ease;
         }
-
         .entry-brief {
             font-size: 0.9em;
             color: rgba(255, 255, 255, 0.5);
@@ -420,24 +371,20 @@
             font-weight: 400;
             line-height: 1.4;
         }
-
         .entry-card:hover .entry-name {
             color: #48dbfb;
             transform: translateX(-5px);
         }
-
         .entry-right {
             display: flex;
             align-items: center;
             gap: 20px;
         }
-
         .entry-votes {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
         }
-
         .votes-number {
             font-size: 2em;
             font-weight: 900;
@@ -446,14 +393,12 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .votes-label {
             font-size: 0.85em;
             color: rgba(255, 255, 255, 0.4);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-
         .percentage-badge {
             background: rgba(72, 219, 251, 0.1);
             border: 1px solid rgba(72, 219, 251, 0.3);
@@ -464,12 +409,10 @@
             font-size: 0.95em;
             transition: all 0.3s ease;
         }
-
         .entry-card:hover .percentage-badge {
             background: rgba(72, 219, 251, 0.2);
             transform: scale(1.05);
         }
-
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -480,67 +423,54 @@
                 transform: translateY(0);
             }
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
         @keyframes gridMove {
             0% { transform: translate(0, 0); }
             100% { transform: translate(50px, 50px); }
         }
-
         @media (max-width: 1200px) {
             .winners-showcase {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-
             .winner-card:nth-child(1) {
                 transform: scale(1);
                 margin-top: 0;
             }
-
             .entries-grid {
                 grid-template-columns: 1fr;
             }
         }
-
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5em;
             }
-
             .stats-container {
                 gap: 20px;
             }
-
             .entry-card {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
             }
-
             .entry-left {
                 flex-direction: column;
                 gap: 15px;
             }
-
             .entry-votes {
                 align-items: center;
             }
-
             .section-header {
                 flex-direction: column;
                 gap: 20px;
@@ -551,7 +481,6 @@
 <body>
     <div class="background-gradient"></div>
     <div class="grid-overlay"></div>
-
     <div class="container">
         <div class="header-section">
             <h1 class="main-title">تصويت أسماء شركات</h1>
@@ -568,11 +497,9 @@
                 </div>
             </div>
         </div>
-
         <div class="winners-showcase" id="winnersSection">
             <!-- سيتم ملؤها ديناميكياً -->
         </div>
-
         <div class="all-entries-section">
             <div class="section-header">
                 <h2 class="section-title">جميع المقترحات</h2>
@@ -581,13 +508,11 @@
                     <div class="filter-tab">الأعلى تصويتاً</div>
                 </div>
             </div>
-
             <div class="entries-grid" id="entriesGrid">
                 <!-- سيتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
-
     <script>
         // بيانات الأسماء
         const businessNames = [
@@ -637,14 +562,18 @@
                 votes: 1
             },
         ];
-
+        
         // حساب إجمالي الأصوات
         const totalVotes = businessNames.reduce((sum, item) => sum + item.votes, 0);
-
+        
+        // ترتيب الأسماء حسب عدد الأصوات من الأعلى للأقل
+        const sortedNames = [...businessNames].sort((a, b) => b.votes - a.votes);
+        
+        // اختيار أفضل 3 بناءً على الترتيب
+        const topThree = sortedNames.slice(0, 3);
+        
         // عرض أفضل 3
         const winnersSection = document.getElementById('winnersSection');
-        const topThree = businessNames.slice(0, 3);
-
         topThree.forEach((item, index) => {
             const winnerCard = `
                 <div class="winner-card">
@@ -657,11 +586,10 @@
             `;
             winnersSection.innerHTML += winnerCard;
         });
-
-        // عرض جميع الأسماء
+        
+        // عرض جميع الأسماء مرتبة حسب الأصوات
         const entriesGrid = document.getElementById('entriesGrid');
-
-        businessNames.forEach((item, index) => {
+        sortedNames.forEach((item, index) => {
             const percentage = Math.round((item.votes / totalVotes) * 100);
             
             const entryCard = `
