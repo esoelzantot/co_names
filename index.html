@@ -413,6 +413,14 @@
             transition: all 0.3s ease;
         }
 
+        .entry-brief {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 5px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
         .entry-card:hover .entry-name {
             color: #48dbfb;
             transform: translateX(-5px);
@@ -552,39 +560,17 @@
             <div class="stats-container">
                 <div class="stat-box">
                     <div class="stat-label">أصوات داخلية</div>
-                    <div class="stat-value">247</div>
+                    <div class="stat-value" id="internalVotes">247</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-label">أصوات خارجية</div>
-                    <div class="stat-value">247</div>
+                    <div class="stat-value" id="externalVotes">247</div>
                 </div>
             </div>
         </div>
 
-        <div class="winners-showcase">
-            <div class="winner-card">
-                <div class="winner-content">
-                    <div class="rank-number">1</div>
-                    <h2 class="winner-name">نبض الابتكار</h2>
-                    <div class="winner-votes">89 صوت</div>
-                </div>
-            </div>
-
-            <div class="winner-card">
-                <div class="winner-content">
-                    <div class="rank-number">2</div>
-                    <h2 class="winner-name">أفق النجاح</h2>
-                    <div class="winner-votes">76 صوت</div>
-                </div>
-            </div>
-
-            <div class="winner-card">
-                <div class="winner-content">
-                    <div class="rank-number">3</div>
-                    <h2 class="winner-name">بصمة رقمية</h2>
-                    <div class="winner-votes">68 صوت</div>
-                </div>
-            </div>
+        <div class="winners-showcase" id="winnersSection">
+            <!-- سيتم ملؤها ديناميكياً -->
         </div>
 
         <div class="all-entries-section">
@@ -596,148 +582,113 @@
                 </div>
             </div>
 
-            <div class="entries-grid">
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">1</div>
-                        <div class="entry-name">نبض الابتكار</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">89</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">36%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">2</div>
-                        <div class="entry-name">أفق النجاح</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">76</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">31%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">3</div>
-                        <div class="entry-name">بصمة رقمية</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">68</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">28%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">4</div>
-                        <div class="entry-name">رواد المستقبل</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">54</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">22%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">5</div>
-                        <div class="entry-name">قمة الإبداع</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">47</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">19%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">6</div>
-                        <div class="entry-name">شرارة النجاح</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">42</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">17%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">7</div>
-                        <div class="entry-name">مسار التميز</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">38</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">15%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">8</div>
-                        <div class="entry-name">جذور الريادة</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">31</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">13%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">9</div>
-                        <div class="entry-name">لمسة احتراف</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">26</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">11%</div>
-                    </div>
-                </div>
-
-                <div class="entry-card">
-                    <div class="entry-left">
-                        <div class="entry-rank">10</div>
-                        <div class="entry-name">طموح لا حدود</div>
-                    </div>
-                    <div class="entry-right">
-                        <div class="entry-votes">
-                            <div class="votes-number">23</div>
-                            <div class="votes-label">صوت</div>
-                        </div>
-                        <div class="percentage-badge">9%</div>
-                    </div>
-                </div>
+            <div class="entries-grid" id="entriesGrid">
+                <!-- سيتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
+
+    <script>
+        // بيانات الأسماء
+        const businessNames = [
+            {
+                name: 'نبض الابتكار',
+                brief: 'اسم يعكس الحيوية والتجديد المستمر',
+                votes: 89
+            },
+            {
+                name: 'أفق النجاح',
+                brief: 'يرمز للطموح والنظرة المستقبلية',
+                votes: 76
+            },
+            {
+                name: 'بصمة رقمية',
+                brief: 'تأثير مميز في العالم الرقمي',
+                votes: 68
+            },
+            {
+                name: 'رواد المستقبل',
+                brief: 'قيادة التغيير والابتكار',
+                votes: 54
+            },
+            {
+                name: 'قمة الإبداع',
+                brief: 'التميز في كل ما نقدمه',
+                votes: 47
+            },
+            {
+                name: 'شرارة النجاح',
+                brief: 'بداية قوية لإنجازات كبيرة',
+                votes: 42
+            },
+            {
+                name: 'مسار التميز',
+                brief: 'طريق واضح نحو القمة',
+                votes: 38
+            },
+            {
+                name: 'جذور الريادة',
+                brief: 'أساس قوي للنجاح المستدام',
+                votes: 31
+            },
+            {
+                name: 'لمسة احتراف',
+                brief: 'الجودة في كل التفاصيل',
+                votes: 26
+            },
+            {
+                name: 'طموح لا حدود',
+                brief: 'أحلام كبيرة بلا قيود',
+                votes: 23
+            }
+        ];
+
+        // حساب إجمالي الأصوات
+        const totalVotes = businessNames.reduce((sum, item) => sum + item.votes, 0);
+
+        // عرض أفضل 3
+        const winnersSection = document.getElementById('winnersSection');
+        const topThree = businessNames.slice(0, 3);
+
+        topThree.forEach((item, index) => {
+            const winnerCard = `
+                <div class="winner-card">
+                    <div class="winner-content">
+                        <div class="rank-number">${index + 1}</div>
+                        <h2 class="winner-name">${item.name}</h2>
+                        <div class="winner-votes">${item.votes} صوت</div>
+                    </div>
+                </div>
+            `;
+            winnersSection.innerHTML += winnerCard;
+        });
+
+        // عرض جميع الأسماء
+        const entriesGrid = document.getElementById('entriesGrid');
+
+        businessNames.forEach((item, index) => {
+            const percentage = Math.round((item.votes / totalVotes) * 100);
+            
+            const entryCard = `
+                <div class="entry-card">
+                    <div class="entry-left">
+                        <div class="entry-rank">${index + 1}</div>
+                        <div>
+                            <div class="entry-name">${item.name}</div>
+                            <div class="entry-brief">${item.brief}</div>
+                        </div>
+                    </div>
+                    <div class="entry-right">
+                        <div class="entry-votes">
+                            <div class="votes-number">${item.votes}</div>
+                            <div class="votes-label">صوت</div>
+                        </div>
+                        <div class="percentage-badge">${percentage}%</div>
+                    </div>
+                </div>
+            `;
+            entriesGrid.innerHTML += entryCard;
+        });
+    </script>
 </body>
 </html>
